@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         <ul className="text-lg">
           <li>
             <a
-              href="Machine-coding/tic-tac-toe/index.html"
+              href="https://anupam-coder.github.io/developer-practice/Machine-coding/tic-tac-toe/index.html"
               className="text-blue-500 hover:underline no-underline"
             >
               Tic Tac Toe
