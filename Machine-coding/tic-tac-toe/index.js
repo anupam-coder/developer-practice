@@ -16,6 +16,7 @@ class TicTacToe {
     this.rootEl.appendChild(this.createGrid());
     const elements = this.rootEl.children;
     for (let i = 0; i < this.gridSize; i++) {
+      //assigning the child elements to this.grid to set the values(X,O)
       this.grid[i] = Array.from(elements).slice(
         i * this.gridSize,
         i * this.gridSize + this.gridSize
