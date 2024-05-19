@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 
 export default function Home() {
@@ -25,6 +26,18 @@ export default function Home() {
               Tic Tac Toe
             </a>
           </li>
+          <li>
+            <Link legacyBehavior href="/FolderStructure">
+              <a className="text-blue-500 hover:underline no-underline">
+                Folder Structure
+              </a>
+            </Link>
+          </li>
+          <Link legacyBehavior href="/StarRating">
+            <a className="text-blue-500 hover:underline no-underline">
+              Star Rating
+            </a>
+          </Link>
         </ul>
       </main>
     </div>
