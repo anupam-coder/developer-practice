@@ -1,7 +1,7 @@
 "use client"; // This is a client component 👈🏽
 import { useState } from "react";
 import explorer from "./data/folderData";
-import Folder from "./components/folder";
+import Folder from "./components/Folder";
 import "./FolderApp.css";
 import useTraverseTree from "./hooks/useTraverseTree";
 
