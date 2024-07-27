@@ -1,7 +1,7 @@
 "use client"; // This is a client component 👈🏽
 import React, { useState } from "react";
 
-function Folder({ explorer, handleInsertNode }) {
+function Folder({ explorer, handleInsertNode, handleDeleteNode }) {
   const [expand, setExpand] = useState(false);
   const [showInput, setShowInput] = useState({
     visible: false,
@@ -25,6 +25,12 @@ function Folder({ explorer, handleInsertNode }) {
     }
   };
 
+  const handleDeletion = (e, isFolder) => {
+    e.stopPropagation();
+    console.log(explorer.id, "e", isFolder);
+    handleDeleteNode(explorer.id);
+  };
+
   if (explorer.isFolder) {
     return (
       <div style={{ marginTop: 5 }}>
@@ -35,13 +41,17 @@ function Folder({ explorer, handleInsertNode }) {
               className="add-folder-btn"
               onClick={(e) => handleNewFolder(e, true)}
             >
-              Folder +
+              Folder+{" "}
             </button>
             <button
               className="add-file-btn"
               onClick={(e) => handleNewFolder(e, false)}
             >
               File +
+            </button>
+            <button className="delete" onClick={(e) => handleDeletion(e, true)}>
+              {" "}
+              Delete ❌
             </button>
           </div>
         </div>
@@ -62,6 +72,7 @@ function Folder({ explorer, handleInsertNode }) {
             return (
               <Folder
                 handleInsertNode={handleInsertNode}
+                handleDeleteNode={handleDeleteNode}
                 explorer={exp}
                 key={exp.id}
               />
@@ -70,8 +81,18 @@ function Folder({ explorer, handleInsertNode }) {
         </div>
       </div>
     );
-  } else {
-    return <span className="file">📄 {explorer.name}</span>;
+  } else if (explorer) {
+    return (
+      <div className="file-container">
+        <span className="file">📄 {explorer.name}</span>
+        <button
+          className="file-delete-btn"
+          onClick={(e) => handleDeletion(e, false)}
+        >
+          Delete ❌
+        </button>
+      </div>
+    );
   }
 }
 

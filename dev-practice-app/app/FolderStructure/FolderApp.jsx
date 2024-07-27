@@ -8,12 +8,18 @@ import useTraverseTree from "./hooks/useTraverseTree";
 function FolderApp() {
   const [explorerData, setExplorerData] = useState(explorer);
 
-  const { insertNode } = useTraverseTree();
+  const { insertNode, deleteNode } = useTraverseTree();
 
   const handleInsertNode = (folderId, item, isFolder) => {
     const finalTree = insertNode(explorerData, folderId, item, isFolder);
 
     setExplorerData(finalTree);
+  };
+
+  const handleDeleteNode = (folderId) => {
+    const updatedTree = deleteNode(explorerData, folderId);
+    console.log(updatedTree, "updatedtree");
+    setExplorerData(updatedTree);
   };
 
   return (
@@ -22,7 +28,11 @@ function FolderApp() {
         Folder Structure
       </h1>
       <div className="folder-app">
-        <Folder handleInsertNode={handleInsertNode} explorer={explorerData} />
+        <Folder
+          handleInsertNode={handleInsertNode}
+          handleDeleteNode={handleDeleteNode}
+          explorer={explorerData}
+        />
       </div>
     </>
   );

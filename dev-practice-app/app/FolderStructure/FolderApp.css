@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 2px;
-  width: 300px;
+  width: 350px;
   cursor: pointer;
 }
 
@@ -13,13 +13,13 @@
   margin: 0 5px;
 }
 
-.folder > div > button {
+/* .folder > div > button {
   font-size: 15px;
+  background: url("../../public/add-folder-button-svg.svg");
   background-color: white;
-}
+} */
 
 .file {
-  margin-top: 5px;
   padding-left: 5px;
   display: flex;
   flex-direction: column;
@@ -37,3 +37,18 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
+.file-container {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+/* 
+.add-folder-btn span {
+  background: url("../../public/add-folder-button-svg.svg");
+  width: 60px;
+  background-repeat: no-repeat;
+  background-color: white;
+  color: white;
+} */

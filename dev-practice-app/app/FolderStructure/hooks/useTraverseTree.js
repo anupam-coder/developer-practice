@@ -18,7 +18,19 @@ const useTraverseTree = () => {
   }
 
   //deleteNode and UpdateNode remname
-  const deleteNode = () => {};
+  const deleteNode = (tree, folderId) => {
+    if (tree.id === folderId) {
+      return false;
+    }
+    let updatedItems = tree.items
+      .map((el) => {
+        const updateNode = deleteNode(el, folderId);
+        return updateNode !== false ? updateNode : null;
+      })
+      .filter(Boolean);
+    //console.log(updatedItems, "updatedItems", { ...tree, items: updatedItems });
+    return { ...tree, items: updatedItems };
+  };
   const updateNode = () => {};
 
   return { insertNode, deleteNode, updateNode };
