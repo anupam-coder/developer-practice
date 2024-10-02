@@ -27,17 +27,41 @@ export default function Home() {
             </a>
           </li>
           <li>
+            <a
+              href="https://anupam-coder.github.io/developer-practice/Machine-coding/product-tour/index.html"
+              className="text-blue-500 hover:underline no-underline"
+            >
+              Product Tour
+            </a>
+          </li>
+          <li>
             <Link legacyBehavior href="/FolderStructure">
               <a className="text-blue-500 hover:underline no-underline">
                 Folder Structure
               </a>
             </Link>
           </li>
-          <Link legacyBehavior href="/StarRating">
-            <a className="text-blue-500 hover:underline no-underline">
-              Star Rating
-            </a>
-          </Link>
+          <li>
+            <Link legacyBehavior href="/StarRating">
+              <a className="text-blue-500 hover:underline no-underline">
+                Star Rating
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/TodoList">
+              <a className="text-blue-500 hover:underline no-underline">
+                Todo List
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/Pagination">
+              <a className="text-blue-500 hover:underline no-underline">
+                Custom Pagination Component
+              </a>
+            </Link>
+          </li>
         </ul>
       </main>
     </div>

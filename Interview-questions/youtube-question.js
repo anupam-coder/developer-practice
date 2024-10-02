@@ -103,7 +103,7 @@ const setCache = ({key, value})=>{
   }
   
  const cacheKeys = Object.keys(cache);
-if(Object.keys(cache).length > CACHE_SIZE){
+if(cacheKeys.length > CACHE_SIZE){
   let time = Infinity, cacheKey;
   for(let key in cache){
     console.log(cache[key].time);
@@ -144,7 +144,7 @@ LruCache1.getCacheValue("chocolate");
 LruCache1.setCache({key: "Mango", value: 3});
 
 
-
+//Try out with the hashmap to optimise further using map it will be sorting out by default
 
 
 
