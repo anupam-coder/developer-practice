@@ -1,6 +1,6 @@
 "use client"; // This is a client component 👈🏽
 import { useMemo, useState } from "react";
-import data from "./data/mock-data.json";
+import data from "./Data/mock-data.json";
 import Pagination from "./Pagination";
 import "./style.scss";
 
