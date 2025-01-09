@@ -62,6 +62,48 @@ export default function Home() {
               </a>
             </Link>
           </li>
+          <li>
+            <Link legacyBehavior href="/StopWatch">
+              <a className="text-blue-500 hover:underline no-underline">
+                Stop Watch
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/Accordion">
+              <a className="text-blue-500 hover:underline no-underline">
+                Accordion
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/Carousal">
+              <a className="text-blue-500 hover:underline no-underline">
+                Carousal
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/Modal">
+              <a className="text-blue-500 hover:underline no-underline">
+                Modal Component
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/Comment">
+              <a className="text-blue-500 hover:underline no-underline">
+                Comments Component
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/TypeAhead">
+              <a className="text-blue-500 hover:underline no-underline">
+                TypeAhead
+              </a>
+            </Link>
+          </li>
         </ul>
       </main>
     </div>

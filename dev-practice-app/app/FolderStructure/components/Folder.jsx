@@ -56,7 +56,7 @@ function Folder({ explorer, handleInsertNode, handleDeleteNode }) {
           </div>
         </div>
         <div style={{ display: expand ? "block" : "none", paddingLeft: 25 }}>
-          {showInput.visible && (
+          {showInput.visible && ( 
             <div className="inputContainer">
               <span>{showInput.isFolder ? "📁" : "📄"}</span>
               <input
