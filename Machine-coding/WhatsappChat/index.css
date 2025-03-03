@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  height: 100vh;
+}
+
+h2 {
+  text-align: center;
+}
+
+#messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 70%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+.sent {
+  align-self: flex-start;
+  background-color: #dcf8c6;
+}
+
+.received {
+  align-self: flex-end;
+  background-color: #ece5dd;
+}
+
+#input-container {
+  display: flex;
+  padding: 10px;
+  gap: 5px;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+#message-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+#send-btn {
+  padding: 10px 20px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
