@@ -39,3 +39,56 @@ var obj = new Trie();
 obj.insert(word);
 var param_2 = obj.search(word);
 var param_3 = obj.startsWith(prefix);
+
+//Build Trie
+
+let words = ["oath", "pea", "eat", "rain"];
+
+const buildTrie = () => {
+  const root = {};
+  for (const w of words) {
+    let node = root;
+    for (const c of w) {
+      if (node[c] == null) node[c] = {};
+      node = node[c];
+    }
+    node.word = w;
+  }
+  return root;
+};
+
+//output of the buildTrie
+let output = {
+  o: {
+    a: {
+      t: {
+        h: {
+          word: "oath",
+        },
+      },
+    },
+  },
+  p: {
+    e: {
+      a: {
+        word: "pea",
+      },
+    },
+  },
+  e: {
+    a: {
+      t: {
+        word: "eat",
+      },
+    },
+  },
+  r: {
+    a: {
+      i: {
+        n: {
+          word: "rain",
+        },
+      },
+    },
+  },
+};
