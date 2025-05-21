@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 
 const StopWatch = () => {
   const [time, setTime] = useState(0);

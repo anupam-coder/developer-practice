@@ -1,5 +1,5 @@
 "use client"; // This is a client component 👈🏽
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const Star = ({ id, fill = `#ffffff`, onMouseEnter }) => {
   return (
@@ -34,24 +34,28 @@ export const Star = ({ id, fill = `#ffffff`, onMouseEnter }) => {
 
 function StarRating() {
   const defaultStars = [
-    { id: 0, onHover: false, onActive: false },
-    { id: 1, onHover: false, onActive: false },
-    { id: 2, onHover: false, onActive: false },
-    { id: 3, onHover: false, onActive: false },
-    { id: 4, onHover: false, onActive: false },
+    { id: 0, onActive: false },
+    { id: 1, onActive: false },
+    { id: 2, onActive: false },
+    { id: 3, onActive: false },
+    { id: 4, onActive: false },
   ];
 
-  const [stars, setStars] = useState([
-    { id: 0, onHover: false, onActive: false },
-    { id: 1, onHover: false, onActive: false },
-    { id: 2, onHover: false, onActive: false },
-    { id: 3, onHover: false, onActive: false },
-    { id: 4, onHover: false, onActive: false },
-  ]);
+  const reaction = [
+    { count: 1, emoji: "😞" },
+    { count: 2, emoji: "🙁" },
+    { count: 3, emoji: "🤐" },
+    { count: 4, emoji: "😀" },
+    { count: 5, emoji: "😊" },
+  ];
+
+  const [stars, setStars] = useState(defaultStars);
 
   const [rating, setRating] = useState(false);
 
-  const onHover = (el) => {
+  const [emoji, setEmoji] = useState("");
+
+  const onMouseEnter = (el) => {
     let activeStar = Number(el.target.id);
     setStars(
       stars.map((star) => {
@@ -61,6 +65,7 @@ function StarRating() {
         };
       })
     );
+    triggerEmoji(activeStar);
     setRating(false);
   };
 
@@ -79,19 +84,21 @@ function StarRating() {
 
   const onMouseLeave = (el) => {
     if (!rating) {
-      setStars(
-        stars.map((star) => {
-          return {
-            ...star,
-            onActive: star.onHover,
-          };
-        })
-      );
+      onReset();
+    }
+  };
+
+  const triggerEmoji = (star) => {
+    for (let react of reaction) {
+      if (react.count === star + 1) {
+        setEmoji(react.emoji);
+      }
     }
   };
 
   const onReset = () => {
     setStars(defaultStars);
+    setEmoji("");
   };
 
   return (
@@ -100,7 +107,7 @@ function StarRating() {
         Star Rating
       </h1>
       <div
-        className="flex flex-row absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+        className="flex flex-row justify-center items-center cursor-pointer"
         onClick={onClick}
         onMouseLeave={onMouseLeave}
       >
@@ -110,15 +117,16 @@ function StarRating() {
               id={el.id}
               key={index}
               fill={el.onActive ? `#FFE732` : `#ffffff`}
-              onMouseEnter={onHover}
+              onMouseEnter={onMouseEnter}
             />
           );
         })}
       </div>
-      <div className="absolute mt-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="flex flex-col justify-center mt-10 items-center gap-5">
+        <div className="text-4xl">{emoji}</div>
         <button
           onClick={onReset}
-          className="border-solid rounded-lg border-2 border-indigo-600 w-16"
+          className="cursor-pointer border-solid rounded-lg border-2 border-indigo-600 w-16"
         >
           Reset
         </button>

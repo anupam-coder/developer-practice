@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App h1 {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.stop-btn {
+  border: 1px solid red;
+  padding: 5px;
+  margin-top: 50px;
+  width: 100px;
+}
+
+.stop-btn:hover {
+  background-color: maroon;
+  color: white;
+}
+
+.start-btn {
+  border: 1px solid green;
+  padding: 5px;
+  margin-top: 50px;
+  width: 100px;
+}
+
+.start-btn:hover {
+  background-color: greenyellow;
+  color: red;
+}
+
+.traffic-container {
+  width: 100px;
+  height: 350px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.traffic-signal {
+  border-radius: 50%;
+  height: 85px;
+  width: 85px;
+  margin: 5px;
+}
