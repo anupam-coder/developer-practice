@@ -18,7 +18,7 @@ Handle edge cases (e.g., redo after new actions)
 
 */
 import React from "react";
-import UndoRedo from "./undoRedo";
+import UndoRedo from "./UndoRedo";
 
 const App = () => {
   return <UndoRedo />;
