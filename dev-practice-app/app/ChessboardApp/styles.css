@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.App h1 {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 75px);
+  grid-template-rows: repeat(8, 75px);
+}
+
+.square {
+  width: 75px;
+  height: 75px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.black-square {
+  background-color: #888;
+}
+
+.white-square {
+  background-color: #fff;
+}
