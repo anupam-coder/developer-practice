@@ -1,0 +1,151 @@
+/* .tab-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 75%;
+}
+
+.heading {
+  border: 1px solid gray;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.tab-body {
+  display: flex;
+  border: 1px solid black;
+  width: 75%;
+  height: 300px;
+  margin: 1px;
+}
+
+.nav-btn {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.nav-btn button {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.error {
+  color: red;
+  display: block;
+  font-size: small;
+} */
+
+/* Container holding all the tabs and form */
+.tab-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 20px auto;
+}
+
+/* Header container for tabs */
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* Individual tab heading */
+.heading {
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.heading:hover {
+  background-color: #d0d0d0;
+}
+
+.heading.active {
+  background-color: #1976d2;
+  color: white;
+}
+
+/* Tab body content */
+.tab-body {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 300px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Navigation buttons (like Next, Previous) */
+.nav-btn {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Styling individual buttons inside the nav section */
+.nav-btn button {
+  border: 1px solid #1976d2;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 0;
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-btn button:hover {
+  background-color: #1565c0;
+}
+
+.nav-btn button:active {
+  transform: scale(0.95);
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Style for all input fields */
+input {
+  padding: 5px 5px;
+  margin: 5px 0 15px 0; /* Space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* To include padding and border in width */
+}
