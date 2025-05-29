@@ -4,6 +4,19 @@ console.log(
 );
 
 /**
+ * Input: s = "cbaebabacd", p = "abc"
+Output: [0,6]
+Explanation:
+The substring with start index = 0 is "cba", which is an anagram of "abc".
+The substring with start index = 6 is "bac", which is an anagram of "abc".
+
+Input: s = "abab", p = "ab"
+Output: [0,1,2]
+Explanation:
+The substring with start index = 0 is "ab", which is an anagram of "ab".
+The substring with start index = 1 is "ba", which is an anagram of "ab".
+The substring with start index = 2 is "ab", which is an anagram of "ab".
+
  * @param {string} s
  * @param {string} p
  * @return {number[]}
@@ -13,8 +26,8 @@ export function findAnagrams(s, p) {
   let res = [];
   let freqS = new Array(26).fill(0);
   let freqP = new Array(26).fill(0);
-  let start = 0,
-    end = p.length;
+  let start = 0;
+  let end = p.length;
 
   for (let i = 0; i < p.length; i++) {
     freqS[s.charCodeAt(i) - "a".charCodeAt(0)]++;
