@@ -9,8 +9,6 @@ console.log(
  */
 export function longestPalindrome(s) {
   let len = s.length,
-    l = 0,
-    r = 0,
     start = 0,
     end = 0,
     ans = 1,

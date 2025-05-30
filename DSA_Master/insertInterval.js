@@ -1,34 +1,47 @@
+/**
+ * @param {number[][]} intervals
+ * @param {number[]} newInterval
+ * @return {number[][]}
+ */
 var insert = function (intervals, newInterval) {
-  let res = []; // Result array to store merged intervals
+  if (intervals.length === 0) return [newInterval];
+  if (newInterval[1] < intervals[0][0]) {
+    return [newInterval, ...intervals];
+  }
+  if (newInterval[0] > intervals[intervals.length - 1][1]) {
+    return [...intervals, newInterval];
+  }
+
+  const result = [];
   let i = 0;
 
-  // Sort intervals based on the starting time to ensure correct merge behavior
-  intervals.sort((a, b) => a[0] - b[0]);
-
-  // Step 1: Add all intervals that end before the new interval starts
-  while (i < intervals.length && intervals[i][1] <= newInterval[0]) {
-    res.push(intervals[i]); // No overlap, safe to add
+  while (i < intervals.length && intervals[i][1] < newInterval[0]) {
+    result.push(intervals[i]);
     i++;
   }
 
-  // Step 2: Merge all overlapping intervals with the new interval
-  while (i < intervals.length && intervals[i][0] <= newInterval[1]) {
-    // Update the newInterval to cover the union of overlapping intervals
-    newInterval = [
-      Math.min(intervals[i][0], newInterval[0]), // New start is the smallest start
-      Math.max(intervals[i][1], newInterval[1]), // New end is the largest end
-    ];
+  if (intervals[i][0] > newInterval[1]) {
+    result.push(newInterval);
+    return [...result, ...intervals.slice(i)];
+  }
+
+  let start = Math.min(newInterval[0], intervals[i][0]);
+  let end = Math.max(newInterval[1], intervals[i][1]);
+
+  i++;
+
+  while (i < intervals.length && intervals[i][0] <= end) {
+    start = Math.min(start, intervals[i][0]);
+    end = Math.max(end, intervals[i][1]);
     i++;
   }
 
-  // Step 3: Add the merged new interval
-  res.push(newInterval);
+  result.push([start, end]);
 
-  // Step 4: Add all the remaining intervals (those that start after newInterval ends)
   while (i < intervals.length) {
-    res.push(intervals[i]);
+    result.push(intervals[i]);
     i++;
   }
 
-  return res; // Return the final list of intervals
+  return result;
 };
