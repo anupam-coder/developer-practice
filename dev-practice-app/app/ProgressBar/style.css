@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App h1 {
+  font-size: 2em;
+  display: block;
+  font-weight: bold;
+}
+
+.progress-bar-container {
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  background-color: green;
+  color: white;
+  padding: 1px;
+  text-align: right;
+  transition: 0.5s ease-in;
+}
