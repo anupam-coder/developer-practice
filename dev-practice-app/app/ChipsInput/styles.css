@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.chips-input {
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.chips-container {
+  display: flex;
+  gap: 5px;
+  margin: 10px;
+}
+
+.chip {
+  background-color: grey;
+  padding: 5px;
+  color: azure;
+}
+
+.chip-btn {
+  color: red;
+  margin-left: 5px;
+  font-size: small;
+}
