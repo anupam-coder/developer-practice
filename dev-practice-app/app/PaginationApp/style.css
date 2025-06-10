@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.App h1 {
+  font-size: 2em;
+  display: block;
+  font-weight: bold;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.product-img {
+  width: 100px;
+  height: 100px;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-number {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.pagination-container {
+  margin: 10px 0 20px 0;
+}
+
+.active {
+  background-color: aqua;
+}
