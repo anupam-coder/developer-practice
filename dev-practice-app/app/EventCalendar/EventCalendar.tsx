@@ -65,11 +65,14 @@ const MonthWiseCalender = ({
           {day}
         </div>
       ))}
-      {new Array(firstDay).fill(0).map((day) => (
-        <div className="border-2 border-gray justify-center flex items-center w-full h-28"></div>
+      {new Array(firstDay).fill(0).map((day, index) => (
+        <div
+          key={index}
+          className="border-2 border-gray justify-center flex items-center w-full h-28"
+        ></div>
       ))}
       {new Array(lastDateOfMonth).fill(0).map((day, index) => (
-        <div>
+        <div key={index}>
           <div className="border-2 border-gray flex flex-col items-center w-full h-28">
             {netToday.getDate() === index + 1 &&
               netToday.getMonth() === month &&
